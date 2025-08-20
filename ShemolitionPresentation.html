@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shemolition Duplex & Townhome Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        // Slide 0: Title Slide
+        const TitleSlide = () => (
+          <div className="text-center flex flex-col items-center justify-center h-full">
+            <div className="flex items-center justify-center mb-8">
+              {/* Shemolition Logo */}
+              <img
+                src="https://storage.googleapis.com/gwh-assets/Shemolition%20logo%20final.png"
+                alt="Shemolition Logo"
+                className="w-48 h-48"
+              />
+            </div>
+            <h1 className="text-6xl font-extrabold text-violet-800 mb-4">Shemolition</h1>
+            <p className="text-3xl text-gray-600 font-light">
+              Building Wealth Through Duplexes & Townhomes
+            </p>
+          </div>
+        );
+
+        // Slide 1: The Vision
+        const VisionSlide = () => (
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-violet-700 mb-6">Your Vision, Our Expertise</h2>
+            <p className="text-xl text-gray-700 mb-4 leading-relaxed">
+              At Shemolition, we believe in making real estate investment simple and profitable. We've built our program to turn your vision into a reality, providing a stress-free path to owning a high-quality, wealth-building duplex or townhome.
+            </p>
+            <p className="text-lg text-gray-500">
+              Let us be your trusted partner on this journey.
+            </p>
+          </div>
+        );
+
+        // Slide 2: Duplex Plans
+        const PlansSlide = () => (
+          <div className="w-full">
+            <h2 className="text-4xl font-bold text-center text-violet-700 mb-8">
+              Featured Duplex Plans
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Plan 1 */}
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner flex flex-col items-center">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  Plan A: The Contemporary
+                </h3>
+                {/* Gallery of images for Plan A */}
+                <div className="grid grid-cols-1 gap-4 mb-4">
+                  <img
+                    src="https://assets.architecturaldesigns.com/cdn-cgi/image/width=1920,quality=85,format=auto/plan_assets/365813921/original/135281GRA_render002_1722018895.jpg"
+                    alt="Contemporary Duplex Front View"
+                    className="w-full h-auto rounded-lg shadow"
+                  />
+                  <div className="grid grid-cols-2 gap-4">
+                    <img
+                      src="https://assets.architecturaldesigns.com/cdn-cgi/image/width=1920,quality=85,format=auto/plan_assets/365813921/original/135281GRA_render003_1722018995.jpg"
+                      alt="Contemporary Duplex Side View"
+                      className="w-full h-auto rounded-lg shadow"
+                    />
+                     <img
+                      src="https://assets.architecturaldesigns.com/cdn-cgi/image/width=1920,quality=85,format=auto/plan_assets/365813921/original/135281GRA_render008_1722019298.jpg"
+                      alt="Contemporary Duplex Interior"
+                      className="w-full h-auto rounded-lg shadow"
+                    />
+                  </div>
+                </div>
+                <p className="text-lg text-gray-600 mb-4">
+                  This contemporary duplex house plan offers two units, each with a
+                  modern design and efficient layout.
+                </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <li>Total Units: 2</li>
+                  <li>Each Unit: 3 Beds | 2.5 Baths</li>
+                  <li>Garage: 1-car per unit</li>
+                  <li>Total Gross Living Area: 3,130 sq. ft.</li>
+                  <li>Footprint: 2,400 sq. ft. total</li>
+                </ul>
+              </div>
+
+              {/* Plan 2 - The Modern Urban */}
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner flex flex-col items-center">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  Plan B: The Modern Urban
+                </h3>
+                {/* Gallery of images for Plan B */}
+                <div className="grid grid-cols-1 gap-4 mb-4">
+                  <img
+                    src="https://assets.architecturaldesigns.com/cdn-cgi/image/width=1920,quality=85,format=auto/plan_assets/359410604/original/100319GHR_RENDER_1704468596.jpg"
+                    alt="Modern Urban Duplex Plan"
+                    className="w-full h-auto rounded-lg shadow"
+                  />
+                  <div className="grid grid-cols-2 gap-4">
+                    <img
+                      src="https://assets.architecturaldesigns.com/plan_assets/359410604/original/1000319GHR_F1_1704468586.gif"
+                      alt="Modern Urban Duplex Floor Plan 1"
+                      className="w-full h-auto rounded-lg shadow"
+                    />
+                    <img
+                      src="https://assets.architecturaldesigns.com/plan_assets/359410604/original/1000319GHR_F2_1704468589.gif"
+                      alt="Modern Urban Duplex Floor Plan 2"
+                      className="w-full h-auto rounded-lg shadow"
+                    />
+                  </div>
+                </div>
+                <p className="text-lg text-gray-600 mb-4">
+                  A sleek and spacious modern duplex designed for narrow urban lots. This unit can be built with up to three buildings.
+                </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <li>Total Units: 2</li>
+                  <li>Each Unit: 3 Beds | 2 Baths</li>
+                  <li>Garage: None (Street parking/detached garage potential)</li>
+                  <li>Total Gross Living Area: 2,594 sq. ft.</li>
+                  <li>Footprint: 19' x 74' per unit</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+
+        // Slide 3: The Process
+        const ProcessSlide = () => (
+          <div className="w-full">
+            <h2 className="text-4xl font-bold text-center text-violet-700 mb-8">
+              Your Path to Success
+            </h2>
+            <div className="space-y-6">
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-2">
+                  Finding the Perfect Lot
+                </h3>
+                <p className="text-lg text-gray-700">
+                  We work closely with your broker to identify land that's perfectly suited for a duplex. Our expertise in zoning, local regulations, and building footprints ensures your project starts on solid ground.
+                </p>
+              </div>
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-2">
+                  Our Partner Program
+                </h3>
+                <p className="text-lg text-gray-700">
+                  Our collaboration with top real estate partners is designed to be a seamless, branded experience for you. We handle the development, while you get to enjoy a simple, stress-free process.
+                </p>
+              </div>
+            </div>
+            <hr className="my-8 border-gray-300" />
+            <div className="w-full mt-6">
+              <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                Lot & Zoning Requirements
+              </h3>
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <p className="text-lg text-gray-700 font-bold mb-2">
+                  Plan A: The Contemporary Duplex
+                </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <li>
+                    <span className="font-semibold">Minimum Lot Dimensions:</span>
+                    We will look for lots that can accommodate a footprint of approximately 47' wide by 53' deep, plus any required setbacks (e.g., side, front, and rear yards).
+                  </li>
+                  <li>
+                    <span className="font-semibold">Zoning:</span>
+                    This plan is suited for lots zoned for duplex or two-family residential use.
+                  </li>
+                </ul>
+                <p className="text-lg text-gray-700 font-bold mt-4 mb-2">
+                  Plan B: The Modern Urban Duplex
+                </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <li>
+                    <span className="font-semibold">Lot Dimensions & Density:</span>
+                    This plan is specifically designed for narrow urban infill lots with a footprint of 19' wide by 74' deep per unit. Multiple units can be built on a single lot, allowing for up to three buildings or a total of six units.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Zoning:</span>
+                    We will target lots zoned for multi-family, urban townhome, or high-density residential use.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+
+        // Slide 5: Partnership Process with Black Girls in Real Estate
+        const PartnerProcessSlide = () => (
+          <div className="w-full">
+            <h2 className="text-4xl font-bold text-center text-violet-700 mb-8">
+              Partnering with Black Girls in Real Estate
+            </h2>
+            <div className="space-y-6">
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner flex flex-col items-center">
+                <img
+                  src="https://narebconvention.com/wp-content/uploads/2025/07/NAREB-Jeanine-Searcy.jpg"
+                  alt="Jeanine Searcy"
+                  className="w-48 h-48 rounded-full mb-4 shadow-lg"
+                />
+                <h3 className="text-2xl font-bold text-violet-800 mb-4 text-center">
+                  A Message from Jeanine Searcy
+                </h3>
+                <p className="text-lg text-gray-700 italic">
+                  "Our partnership with Shemolition is a collaboration focused on creating exceptional opportunities for income generation. Our **Dirt to Doors™ Mentorship Program** is a high-touch, 6-month mentorship designed to take you from idea to an income-producing property. The coaching is not required to build your first duplex and reap the benefits, but I am here to help you on both the educational and practical sides of your journey. You’ll not only learn how to develop duplexes and small multifamily properties, but you’ll also walk away with your own investment property under construction and a roadmap to scale."
+                </p>
+              </div>
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  What You'll Achieve with Our Mentorship
+                </h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 text-lg">
+                    <li>
+                        <span className="font-semibold">Secured Financing:</span>
+                        We'll guide you to secure financing for your project(s).
+                    </li>
+                    <li>
+                        <span className="font-semibold">Land Acquisition:</span>
+                        You'll acquire a land parcel and complete due diligence with professional oversight.
+                    </li>
+                    <li>
+                        <span className="font-semibold">Construction Begins:</span>
+                        You'll have your duplex or multifamily property under construction with our team's support.
+                    </li>
+                    <li>
+                        <span className="font-semibold">Exit Strategy:</span>
+                        You'll choose and prepare your exit strategy (sell, refinance, or hold).
+                    </li>
+                    <li>
+                        <span className="font-semibold">Scalable Framework:</span>
+                        You'll walk away with a duplicatable framework to scale into multiple new build developments.
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+
+        // Slide 6: The Pre-Construction Process
+        const PreConstructionSlide = () => (
+          <div className="w-full">
+            <h2 className="text-4xl font-bold text-center text-violet-700 mb-8">
+              Your Pre-Construction Journey
+            </h2>
+            <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+              <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                Pre-Construction Fee Breakdown
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="min-w-full bg-white rounded-lg shadow-md">
+                  <thead>
+                    <tr className="bg-violet-600 text-white">
+                      <th className="py-3 px-6 text-left font-bold rounded-tl-lg">Item</th>
+                      <th className="py-3 px-6 text-left font-bold">Description</th>
+                      <th className="py-3 px-6 text-left font-bold rounded-tr-lg">Fee</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-3 px-6 font-medium">Custom Architectural Plans</td>
+                      <td className="py-3 px-6 text-gray-700">Fully customized duplex floor plans designed to meet narrow-lot conditions, local code, and optional layout enhancements.</td>
+                      <td className="py-3 px-6 text-violet-700">$13,250</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-6 font-medium">Civil Site Plan</td>
+                      <td className="py-3 px-6 text-gray-700">Civil-engineered site layout to meet all Land Disturbance Permit (LDP) requirements.</td>
+                      <td className="py-3 px-6 text-violet-700">$5,000</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-6 font-medium">Permit Management (LDP + Building)</td>
+                      <td className="py-3 px-6 text-gray-700">Full submission and tracking of both permits. Includes coordination with city departments, revision handling, and documentation tracking.</td>
+                      <td className="py-3 px-6 text-violet-700">$3,800</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-3 px-6 font-medium">Administrative Support (10 hrs)</td>
+                      <td className="py-3 px-6 text-gray-700">Covers communications, scheduling, city portal uploads, and internal team coordination.</td>
+                      <td className="py-3 px-6 text-violet-700">$2,200</td>
+                    </tr>
+                    <tr className="font-bold bg-violet-100">
+                      <td className="py-3 px-6">Total Pre-Construction Fee</td>
+                      <td className="py-3 px-6"></td>
+                      <td className="py-3 px-6 text-violet-700">$24,250</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="text-2xl font-bold text-violet-800 mt-6 mb-4">
+                Timeline & Payment Schedule
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <ul className="list-disc list-inside text-gray-700 space-y-2 text-lg">
+                  <li className="font-semibold text-violet-700">Timeline Expectations:</li>
+                  <li>Budget for Financing: 2 Weeks</li>
+                  <li>Plans & Site Plan Production: 4-6 weeks</li>
+                  <li>Land Disturbance Permit (LDP): 4-5 weeks</li>
+                  <li>Building Permit: Up to 10 weeks</li>
+                </ul>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 text-lg">
+                  <li className="font-semibold text-violet-700">Payment Schedule:</li>
+                  <li>60% Upfront: $14,550 - Initiates plan and site plan work.</li>
+                  <li>Permit Submittal Fee: $4,200 - Due at time of submission.</li>
+                  <li>Final Balance: $5,500 - Due at permit approval.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+
+        // Slide 7: The Construction Process
+        const ConstructionSlide = () => (
+          <div className="w-full">
+            <h2 className="text-4xl font-bold text-center text-violet-700 mb-8">
+              Building Your Dream: From Groundwork to Keys
+            </h2>
+            <div className="space-y-6">
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  Securing Your Property
+                </h3>
+                <p className="text-lg text-gray-700 mb-4">
+                  Our team guides you through the crucial process of securing your property. We handle the entire purchase and building process with two key closings for a seamless, stress-free experience.
+                </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 text-lg">
+                  <li>
+                    <span className="font-semibold">First Closing (Land Purchase):</span>
+                    You close on the land purchase first. This locks in your property and allows us to begin the pre-construction phase immediately.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Second Closing (Completed Duplex):</span>
+                    Once the home is fully constructed and passes all inspections, a final closing takes place to transfer ownership of the finished duplex to you.
+                  </li>
+                </ul>
+                <p className="text-lg text-gray-700 mt-4">
+                  This process provides transparency and security, ensuring you have a clear financial path to owning your new property.
+                </p>
+              </div>
+              
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  The Construction Process
+                </h3>
+                <p className="text-lg text-gray-700 mb-4">
+                The construction process typically takes between **4 and 5 months**. Our team manages each step meticulously to ensure a high-quality build and a seamless experience for you.
+              </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 text-lg">
+                  <li>
+                    <span className="font-semibold">Selections:</span>
+                    Before we break ground, you will finalize all material selections with our team, ensuring your duplex is perfectly customized.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Land Clearing & Groundwork:</span>
+                    Once permits are approved, we begin land clearing, grading, and foundation work to prepare the site for building.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Vertical Construction & Inspections:</span>
+                    The building takes shape with framing, roofing, and the installation of all major systems. This phase is monitored closely by our team and by a bank-appointed inspector to ensure every milestone is met.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Final Walkthrough & Key Turnover:</span>
+                    The final step is a comprehensive walk-through to create a punch list. After all items are addressed, we perform the final closing and ceremoniously turn over the keys to your new, wealth-building property.
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  The Draw Schedule
+                </h3>
+                <p className="text-lg text-gray-700 mb-4">
+                  The draw schedule is a pre-defined payment plan tied to specific construction milestones. This process ensures that funds are released only as work is completed and verified.
+                </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 text-lg">
+                  <li>
+                    <span className="font-semibold">Milestone-Based Payments:</span>
+                    Payments are released after key phases of construction are completed, such as foundation pouring, framing, mechanical rough-ins, and drywall.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Bank Inspection:</span>
+                    Before each draw is released, a bank-appointed inspector or appraiser will visit the site to ensure that the work has been completed to a satisfactory standard.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Financial Control:</span>
+                    This process provides financial control and accountability, protecting both the lender's and the owner's investment by preventing the premature release of funds.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+
+        // Slide 8: Included Features
+        const FeaturesSlide = () => (
+          <div className="w-full">
+            <h2 className="text-4xl font-bold text-center text-violet-700 mb-8">
+              Included Features
+            </h2>
+            <div className="space-y-6">
+              {/* General Features */}
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  Life Design Floorplans & General Features
+                </h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <li>9’ first, second, and third floor ceilings per plan</li>
+                  <li>Craftsman interior trim with 6’8” tall doors per plan</li>
+                  <li>Baluster railings per plan, with craftsman newel post and painted square balusters</li>
+                  <li>1x6 baseboard, 1x4 casing throughout</li>
+                  <li>Kwikset Cove hardware in satin nickel finish</li>
+                  <li>Shaw luxury vinyl plank flooring in the entry, kitchen, dining room, family room, family foyer, bathrooms and the utility room</li>
+                  <li>Spacious Owner’s Retreat with large walk-in closet</li>
+                  <li>Block and wire ceiling fan wiring for the family room, owner’s bedroom, and secondary bedrooms</li>
+                  <li>Two media outlets (CAT 6 and RG6), locations per plan, connected to networking Hub</li>
+                  <li>Energy efficient LED disc lighting throughout</li>
+                  <li>Combination Smoke and Carbon Monoxide Detectors</li>
+                  <li>Low VOC Paints and Glues to reduce harmful compounds in the indoor air environment</li>
+                </ul>
+              </div>
+
+              {/* Kitchen */}
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  Kitchen
+                </h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <li>Large island kitchen designs per plan, maple or laminate cabinetry throughout</li>
+                  <li>42” wall cabinets with adjustable shelves per layout</li>
+                  <li>Traditional overlay cabinet doors</li>
+                  <li>Stainless steel General Electric appliance package with gas range, microwave over the range, vented to the exterior, dishwasher, and 1/3 HP disposal</li>
+                  <li>Premium 3 cm quartz countertops in choice of colors.</li>
+                  <li>Stainless steel undermount 8” deep single bowl kitchen sink with one handle Moen chrome faucet</li>
+                </ul>
+              </div>
+
+              {/* Baths */}
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  Baths
+                </h3>
+                <div className="space-y-4">
+                  <ul className="list-disc list-inside text-gray-700 space-y-2">
+                    <li className="font-semibold">Owner’s Bath</li>
+                    <li>Oversized walk-in showers per plan with ceramic tile walls</li>
+                    <li>Framed shower glass enclosure per plan</li>
+                    <li>Soaking tub per plan</li>
+                    <li>Double sinks and vanities</li>
+                  </ul>
+                  <ul className="list-disc list-inside text-gray-700 space-y-2">
+                    <li className="font-semibold">Secondary Baths</li>
+                    <li>Sterling Vikrell tub/showers per plan</li>
+                  </ul>
+                  <ul className="list-disc list-inside text-gray-700 space-y-2">
+                    <li className="font-semibold">All Baths</li>
+                    <li>Maple or laminated, adult height vanities per plan</li>
+                    <li>3 cm quartz vanity tops</li>
+                    <li>Oval undermount sink bowls</li>
+                    <li>Moen chrome faucets and shower heads and controls</li>
+                    <li>Gerber elongated commodes</li>
+                    <li>36” tall mirror(s) per plan</li>
+                    <li>LED Lighting</li>
+                    <li>Broan/Nutone bath fans</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Exteriors */}
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  Richly Appointed Exteriors
+                </h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <li>Stone exterior facades per elevation with choice of style and colors</li>
+                  <li>GAF Royal Sovereign Limited Lifetime Warranty three-tab shingle roof over synthetic underlayment</li>
+                  <li>James Hardie fiber cement board siding with a 30-year, non-prorated warranty. Durable fiber cement board exterior trim with trim accents per plan</li>
+                  <li>Weathermate™ Plus House wrap, a continuous protective membrane that helps keep walls dry from the inside out</li>
+                  <li>5” seamless aluminum gutters and 3x4 downspouts</li>
+                  <li>Therma-tru 6’8” tall exterior fiberglass two panel, smooth exterior door. Full light fiberglass rear door per plan</li>
+                  <li>Lindsay 300 series vinyl windows in white frames with Low E SC dual pane glass</li>
+                  <li>Overhead carriage style insulated garage door per plan including decorative hardware</li>
+                  <li>Wi-Fi controlled garage door opener(s)</li>
+                  <li>Kichler Lighting decorative wall lantern(s) per plan</li>
+                  <li>Concrete rear patio per plan</li>
+                  <li>Tree and shrub landscape package with Bermuda sod in disturbed areas</li>
+                </ul>
+              </div>
+
+              {/* Construction & Energy */}
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  Construction & Energy Saver Details
+                </h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <li>Energy Efficient Lennox 15 SEER II 90% gas furnace(s) with individual room air returns and air conditioner(s) per plan</li>
+                  <li>Honeywell T6 Pro thermostat(s) with programmable Wi-Fi controls</li>
+                  <li>Third party testing and energy rating of sealed package building envelope and mastic sealed duct work</li>
+                  <li>Better insulation and reduced conduction through thicker 2x6 exterior walls which allow for increased R-19 wall values</li>
+                  <li>R-38 ceiling insulation</li>
+                  <li>Gas tankless water heater per plan with recirculating pump</li>
+                  <li>Uponor plumbing supply lines with 25-year warranty</li>
+                  <li>All LED/CFL lighting packages</li>
+                  <li>Preconstruction meetings with your Personal Builder to review construction details and process</li>
+                  <li>Regularly scheduled conference calls with your community team to review construction progress</li>
+                  <li>Quality Assurance Team audits during construction</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+
+
+        // Slide 9: Advantages of Shemolition Duplexes
+        const AdvantagesSlide = () => (
+          <div className="w-full">
+            <h2 className="text-4xl font-bold text-center text-violet-700 mb-8">
+              Your Duplex Advantage
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Benefits for Investors */}
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  Empowering Investors
+                </h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 text-lg">
+                  <li>
+                    <span className="font-semibold">Steady Cash Flow:</span>
+                    Enjoy the financial stability of rental income from multiple units, providing long-term returns.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Tax Advantages:</span>
+                    Benefit from valuable deductions on property expenses and depreciation, maximizing your financial gains.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Diversification:</span>
+                    Spread your risk and ensure a steadier cash flow by having multiple rental units in one property.
+                  </li>
+                </ul>
+              </div>
+
+              {/* Benefits for Homebuyers */}
+              <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+                <h3 className="text-2xl font-bold text-violet-800 mb-4">
+                  Benefits for Homeowners
+                </h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 text-lg">
+                  <li>
+                    <span className="font-semibold">Lower Cost of Entry:</span>
+                    Live affordably by using rental income from the other unit to offset your mortgage payments.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Independence:</span>
+                    Have the freedom to live in a beautifully designed home while building equity and financial security.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Community-Oriented Living:</span>
+                    Fosters a supportive environment, perfect for multi-generational families or co-living arrangements.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+
+        // Proforma Calculator Component
+        // This component is now reusable for both plans.
+        const PlanCalculator = ({ title, squareFeet, defaultLandCost, defaultLoanAmount }) => {
+          const buildCostPerSqFt = 150; // Your secret cost per square foot
+          const calculatedBuildCost = squareFeet * buildCostPerSqFt;
+
+          const [formData, setFormData] = useState({
+            landCost: defaultLandCost,
+            loanAmount: defaultLoanAmount,
+            interestRate: 6.5,
+            loanTerm: 30,
+            unit1Rent: 2800,
+            unit2Rent: 2800,
+            operatingExpenses: 15,
+          });
+
+          const [results, setResults] = useState({});
+          const [showResults, setShowResults] = useState(false);
+
+          const handleChange = (e) => {
+            const { name, value } = e.target;
+            setFormData((prevData) => ({
+              ...prevData,
+              [name]: parseFloat(value) || 0,
+            }));
+          };
+
+          const calculateProforma = () => {
+            const {
+              landCost,
+              loanAmount,
+              interestRate,
+              loanTerm,
+              unit1Rent,
+              unit2Rent,
+              operatingExpenses,
+            } = formData;
+
+            const totalProjectCost = calculatedBuildCost + landCost;
+            const totalRent = unit1Rent + unit2Rent;
+            const vacancyRate = 5;
+            const annualRent = totalRent * 12;
+            const annualEffectiveGrossIncome = annualRent * (1 - vacancyRate / 100);
+            const annualOperatingExpenses = annualEffectiveGrossIncome * (operatingExpenses / 100);
+            const netOperatingIncome = annualEffectiveGrossIncome - annualOperatingExpenses;
+            const cashInvested = totalProjectCost - loanAmount;
+
+            const monthlyInterestRate = interestRate / 100 / 12;
+            const numberOfPayments = loanTerm * 12;
+            const monthlyDebtService =
+              (loanAmount * monthlyInterestRate) /
+              (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+
+            const annualDebtService = monthlyDebtService * 12;
+            const cashFlow = netOperatingIncome - annualDebtService;
+
+            const cashOnCashReturn = (cashFlow / cashInvested) * 100;
+
+            setResults({
+              totalProjectCost: totalProjectCost.toFixed(2),
+              totalRent: totalRent.toFixed(2),
+              netOperatingIncome: netOperatingIncome.toFixed(2),
+              monthlyDebtService: monthlyDebtService.toFixed(2),
+              cashFlow: cashFlow.toFixed(2),
+              cashOnCashReturn: cashOnCashReturn.toFixed(2),
+            });
+            setShowResults(true);
+          };
+
+          const FormInput = ({ label, name, value, onChange, type = 'number', placeholder }) => (
+            <div className="flex flex-col mb-4">
+              <label className="text-gray-700 font-medium mb-1">{label}</label>
+              <input
+                type={type}
+                name={name}
+                value={value}
+                onChange={onChange}
+                placeholder={placeholder}
+                className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all"
+              />
+            </div>
+          );
+
+          return (
+            <div className="bg-violet-50 p-6 rounded-2xl shadow-inner">
+              <h3 className="text-2xl font-bold text-violet-800 mb-4 text-center">{title} Proforma</h3>
+              <div className="mb-4 text-center text-gray-700">
+                <p>Total Heated Area: **{squareFeet.toLocaleString()} sq. ft.**</p>
+                <p className="mt-2">
+                  Your projected build cost is automatically calculated based on this square footage.
+                </p>
+              </div>
+              <FormInput
+                label="Land Cost ($)"
+                name="landCost"
+                value={formData.landCost}
+                onChange={handleChange}
+              />
+              <FormInput
+                label="Loan Amount ($)"
+                name="loanAmount"
+                value={formData.loanAmount}
+                onChange={handleChange}
+              />
+              <FormInput
+                label="Interest Rate (%)"
+                name="interestRate"
+                value={formData.interestRate}
+                onChange={handleChange}
+              />
+              <FormInput
+                label="Loan Term (Years)"
+                name="loanTerm"
+                value={formData.loanTerm}
+                onChange={handleChange}
+              />
+              <FormInput
+                label="Unit 1 Estimated Rent ($)"
+                name="unit1Rent"
+                value={formData.unit1Rent}
+                onChange={handleChange}
+              />
+              <FormInput
+                label="Unit 2 Estimated Rent ($)"
+                name="unit2Rent"
+                value={formData.unit2Rent}
+                onChange={handleChange}
+              />
+              <FormInput
+                label="Operating Expenses (%)"
+                name="operatingExpenses"
+                value={formData.operatingExpenses}
+                onChange={handleChange}
+              />
+              <button
+                onClick={calculateProforma}
+                className="w-full mt-4 px-6 py-3 rounded-xl font-bold text-white bg-violet-600 hover:bg-violet-700 shadow-md transition-colors duration-300"
+              >
+                Calculate
+              </button>
+              {showResults && (
+                <div className="mt-6 space-y-4">
+                  <h4 className="text-xl font-bold text-violet-800 text-center">Calculated Results</h4>
+                  <div className="bg-violet-100 p-4 rounded-xl">
+                    <p className="text-lg font-bold text-violet-800">Total Project Cost:</p>
+                    <p className="text-2xl font-extrabold text-violet-600">${results.totalProjectCost}</p>
+                  </div>
+                  <div className="bg-violet-100 p-4 rounded-xl">
+                    <p className="text-lg font-bold text-violet-800">Total Monthly Rent:</p>
+                    <p className="text-2xl font-extrabold text-violet-600">${results.totalRent}</p>
+                  </div>
+                  <div className="bg-violet-100 p-4 rounded-xl">
+                    <p className="text-lg font-bold text-violet-800">Monthly Mortgage Payment:</p>
+                    <p className="text-2xl font-extrabold text-violet-600">${results.monthlyDebtService}</p>
+                  </div>
+                  <div className="bg-violet-100 p-4 rounded-xl">
+                    <p className="text-lg font-bold text-violet-800">Estimated Cash Flow (per year):</p>
+                    <p className="text-2xl font-extrabold text-violet-600">${results.cashFlow}</p>
+                  </div>
+                  <div className="bg-violet-100 p-4 rounded-xl">
+                    <p className="text-lg font-bold text-violet-800">Cash-on-Cash Return (COC):</p>
+                    <p className="text-2xl font-extrabold text-violet-600">{results.cashOnCashReturn}%</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        };
+
+
+        // Slide 10: The Interactive Proforma
+        const ProformaSlide = () => (
+          <div className="w-full">
+            <h2 className="text-4xl font-bold text-center text-violet-700 mb-8">
+              Interactive Proforma Calculators
+            </h2>
+            <p className="text-center text-gray-600 mb-6">
+              Input your land cost, loan details, and rent to calculate potential returns for each of our plans.
+            </p>
+            <div className="grid md:grid-cols-2 gap-8">
+              <PlanCalculator
+                title="Plan A: The Contemporary"
+                squareFeet={3130}
+                defaultLandCost={200000}
+                defaultLoanAmount={700000}
+              />
+              <PlanCalculator
+                title="Plan B: The Modern Urban"
+                squareFeet={2594}
+                defaultLandCost={150000}
+                defaultLoanAmount={600000}
+              />
+            </div>
+          </div>
+        );
+
+        // Final Slide
+        const FinalSlide = () => (
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-violet-700 mb-6">
+              Let's Start Building Your Wealth Today.
+            </h2>
+            <p className="text-xl text-gray-700 leading-relaxed mb-4">
+              Ready to start your journey? Schedule a call with our team to discuss your plans and begin building your financial future with a Shemolition duplex.
+            </p>
+            <a
+              href="https://placehold.co/100x40/4C1D95/FFFFFF?text=Schedule"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-violet-600 text-white font-bold rounded-xl shadow-lg hover:bg-violet-700 transition-colors duration-300"
+            >
+              Schedule a Call
+            </a>
+          </div>
+        );
+
+        // The main component that contains the entire presentation.
+        const App = () => {
+          const [step, setStep] = useState(0);
+          const totalSteps = 10;
+
+          // Render the current slide based on the step state.
+          const renderSlide = () => {
+            switch (step) {
+              case 0:
+                return <TitleSlide />;
+              case 1:
+                return <VisionSlide />;
+              case 2:
+                return <PlansSlide />;
+              case 3:
+                return <ProcessSlide />;
+              case 4:
+                return <PartnerProcessSlide />;
+              case 5:
+                return <PreConstructionSlide />;
+              case 6:
+                return <ConstructionSlide />;
+              case 7:
+                return <FeaturesSlide />;
+              case 8:
+                return <AdvantagesSlide />;
+              case 9:
+                return <ProformaSlide />;
+              default:
+                return <FinalSlide />;
+            }
+          };
+
+          // Helper function to navigate forward.
+          const nextStep = () => {
+            if (step < totalSteps) {
+              setStep(step + 1);
+            }
+          };
+
+          // Helper function to navigate backward.
+          const prevStep = () => {
+            if (step > 0) {
+              setStep(step - 1);
+            }
+          };
+
+          // The main UI structure for the presentation.
+          return (
+            <div className="min-h-screen bg-gray-100 p-8 flex flex-col justify-center items-center font-['Inter'] antialiased">
+              <div className="w-full max-w-4xl bg-white p-8 rounded-2xl shadow-xl flex flex-col">
+                {/* Progress Bar */}
+                <div className="w-full bg-gray-200 rounded-full h-2 mb-6">
+                  <div
+                    className="bg-violet-600 h-2 rounded-full transition-all duration-500 ease-in-out"
+                    style={{ width: `${((step + 1) / (totalSteps + 1)) * 100}%` }}
+                  ></div>
+                </div>
+
+                {/* Dynamic content area */}
+                <div className="flex-grow flex items-center justify-center p-4">
+                  {renderSlide()}
+                </div>
+
+                {/* Navigation buttons */}
+                <div className="flex justify-between items-center mt-6">
+                  <button
+                    onClick={prevStep}
+                    disabled={step === 0}
+                    className={`
+                      px-6 py-3 rounded-xl font-bold transition-all duration-300
+                      ${step === 0 ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-violet-600 text-white hover:bg-violet-700 shadow-md'}
+                    `}
+                  >
+                    Previous
+                  </button>
+                  <button
+                    onClick={nextStep}
+                    disabled={step === totalSteps}
+                    className={`
+                      px-6 py-3 rounded-xl font-bold transition-all duration-300
+                      ${step === totalSteps ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-violet-600 text-white hover:bg-violet-700 shadow-md'}
+                    `}
+                  >
+                    {step === totalSteps ? 'Finish' : 'Next'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        };
+        
+        const rootElement = document.getElementById('root');
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<App />);
+    </script>
+</body>
+</html>
